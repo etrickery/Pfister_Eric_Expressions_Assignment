@@ -30,7 +30,7 @@ To include more complexity, an array contains calculations to convert to Kelvin 
 var userInput;  //The user's temperature input to be converted
 var choice;     //Variables used to determine a users direction of conversion
 var tempConv = [0, 1];   //This array contains the result of the conversions
-var result;     //The concatenated statement detailing the results of the conversion
+var result = [0, 1];     //The concatenated statement detailing the results of the conversion
 
 
 //First, choose which direction to convert temperature
@@ -43,8 +43,10 @@ if (choice == true) {                                                           
 
     tempConv[0] = (Number(userInput) - 32) * (5 / 9);                           //Formula to convert the temperature
     tempConv[0] = tempConv[0].toFixed(1);                                       //Needed to trim the decimal for aesthetics
-    tempConv[1] = (tempConv[0] + 273);                                          //Convert the temperature to Kelvin
-    result = "Converting Fahrenheit to Celsius: " + (userInput) + "° Fahrenheit is equal to " + (tempConv[0]) + "° Celsius.";
+    tempConv[1] = (Number(tempConv[0]) + 273);                                  //Convert the temperature to Kelvin
+    tempConv[1] = tempConv[1].toFixed(1);                                       //Needed to trim the decimal for aesthetics
+
+    result[0] = "Converting Fahrenheit to Celsius: " + (userInput) + "° Fahrenheit is equal to " + (tempConv[0]) + "° Celsius.";
 
     console.log("°C = 5/9 * (°F - 32)");                                        //Displays the equation used in console log
 
@@ -55,17 +57,22 @@ if (choice == true) {                                                           
 
     tempConv[0] = (Number(userInput) * (9 / 5)) + 32;                           //Formula to convert the temperature
     tempConv[0] = tempConv[0].toFixed(1);                                       //Needed to trim the decimal for aesthetics
-    tempConv[1] = (userInput + 273);                                            //Convert the temperature to Kelvin
-    
-    result = "Converting Celsius to Fahrenheit: " + (userInput) + "° Celsius is equal to " + (tempConv[0]) + "° Fahreneit.";
+    tempConv[1] = (Number(userInput) + 273);                                    //Convert the temperature to Kelvin
+    tempConv[1] = tempConv[1].toFixed(1);                                       //Needed to trim the decimal for aesthetics
+
+    result[0] = "Converting Celsius to Fahrenheit: " + (userInput) + "° Celsius is equal to " + (tempConv[0]) + "° Fahreneit.";
 
     console.log("°F = (9/5 * °C) + 32");                                        //Displays the equation used in console log
 
 }
-console.log("This can also be represented as " + (tempConv[1]) + "° Kelvin. \n°K = °C + 273. ");
+result[1] = "This can also be represented as " + (tempConv[1]) + "° Kelvin. ";
+
+console.log(result[0]);    //Output the result string to the console log, detailing the calculations.
+console.log("°K = °C + 273");
+console.log(result[1]);
 
 
-console.log(result);    //Output the result string to the console log, detailing the calculations.
+
 
 
 
