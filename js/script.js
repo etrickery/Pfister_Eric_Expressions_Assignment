@@ -10,6 +10,17 @@
 This script is designed to accept user input representing a temperature,and then convert that from fahrenheit to celsius
 or the other way around. The user must first choose which direction to convert, and then input the requested temperature.
 The temperature is then converted and displayed in a concatenated statement within the console log.
+
+
+
+The variables defined below are used to determine the desired conversion, and then output is displayed in the console
+using the result variable. The equations used in these calculations are as follows:
+
+C° = 5/9 * (F° - 32)
+F° = (9/5 * C°) + 32
+
+
+
  */
 var userInput;  //The user's temperature input to be converted
 var choice;     //Variables used to determine a users direction of conversion
@@ -20,18 +31,24 @@ var result;     //The concatenated statement detailing the results of the conver
 //First, choose which direction to convert temperature
 choice = confirm("If you would like to convert Fahrenheit to Celsius, click OK. \nIf you would like to convert Celsius to Fahrenheit, click CANCEL");
 
-if (choice == true) {                                                           //Fahrenheit to Celsius
+if (choice == true) {       //Fahrenheit to Celsius
+
     userInput = prompt("Please enter the temperature in Fahrenheit: ", 72);     //Request for value to be converted
+    
     tempConv = (Number(userInput) - 32) * (5 / 9);                              //Formula to convert the temperature
     tempConv = tempConv.toFixed(1);                                             //Needed to trim the decimal for aesthetics
     result = "Converting Fahrenheit to Celsius: " + (userInput) + "° Fahrenheit is equal to " + (tempConv) + "° Celsius.";
+
     console.log("C° = 5/9 * (F° - 32)");                                        //Displays the equation used in console log
 
-} else {                                                                        //Celsius to Fahrenheit
+} else {                    //Celsius to Fahrenheit
+
     userInput = prompt("Please enter the temperature in Celsius: ", 22);        //Request for value to be converted
+
     tempConv = (Number(userInput) * (9 / 5)) + 32;                              //Formula to convert the temperature
     tempConv = tempConv.toFixed(1);                                             //Needed to trim the decimal for aesthetics
     result = "Converting Celsius to Fahrenheit: " + (userInput) + "° Celsius is equal to " + (tempConv) + "° Fahreneit.";
+
     console.log("F° = (9/5 * C°) + 32");                                        //Displays the equation used in console log
 
 }
