@@ -25,6 +25,7 @@ F° = (9/5 * C°) + 32
 "result" is the defined concatenated statement that details the user's desired results.
 
 To include more complexity, an array contains calculations to convert to Kelvin as well, which is also displayed.
+This also required changing result to an array as well.
 
  */
 var userInput;  //The user's temperature input to be converted
@@ -67,9 +68,9 @@ if (choice == true) {                                                           
 }
 result[1] = "This can also be represented as " + (tempConv[1]) + "° Kelvin. ";
 
-console.log(result[0]);    //Output the result string to the console log, detailing the calculations.
-console.log("°K = °C + 273");
-console.log(result[1]);
+console.log(result[0]);             //Output the result string to the console log, detailing the calculations.
+console.log("°K = °C + 273");       //Display the expression used to determine the Kelvin conversion.
+console.log(result[1]);             //Displays the result of solving for Kelvin in a concatenated statement.
 
 
 
