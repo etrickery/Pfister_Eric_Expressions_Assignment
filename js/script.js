@@ -38,12 +38,12 @@ var result = [0, 1];        //The concatenated statement detailing the results o
 //First, choose which direction to convert temperature
 choice = confirm("If you would like to convert Fahrenheit to Celsius, click OK. \nIf you would like to convert Celsius to Fahrenheit, click CANCEL");
 
-//Next, indicate the location of respective temperature
-locaTemp = prompt("Please enter the location: ", "Indianapolis");
-
 
 
 if (choice == true) {                                                           //Fahrenheit to Celsius
+
+    //Next, indicate the location of respective temperature
+    locaTemp = prompt("Please enter the location: ", "Indianapolis");
 
     userInput = prompt("Please enter " + (locaTemp) + "'s temperature in Fahrenheit: ", 72);     //Request for value to be converted
 
@@ -55,12 +55,16 @@ if (choice == true) {                                                           
     tempConv[1] = (Number(tempConv[0]) + 273);                                  //Convert the temperature to Kelvin
     tempConv[1] = tempConv[1].toFixed(1);                                       //Needed to trim the decimal for aesthetics
 
+    //Create the concatenated statement
     result[0] = "Converting Fahrenheit to Celsius: " + (userInput) + "° Fahrenheit is equal to " + (tempConv[0]) + "° Celsius.";
 
     console.log("°C = 5/9 * (°F - 32)");                                        //Displays the equation used in console log
 
 
 } else {                                                                        //Celsius to Fahrenheit
+
+    //Next, indicate the location of respective temperature
+    locaTemp = prompt("Please enter the location: ", "Indianapolis");
 
     userInput = prompt("Please enter " + (locaTemp) + "'s temperature in Celsius: ", 22);        //Request for value to be converted
 
@@ -72,13 +76,14 @@ if (choice == true) {                                                           
     tempConv[1] = (Number(userInput) + 273);                                    //Convert the temperature to Kelvin
     tempConv[1] = tempConv[1].toFixed(1);                                       //Needed to trim the decimal for aesthetics
 
+    //Create the concatenated statement
     result[0] = "Converting Celsius to Fahrenheit: " + (userInput) + "° Celsius is equal to " + (tempConv[0]) + "° Fahreneit.";
 
     console.log("°F = (9/5 * °C) + 32");                                        //Displays the equation used in console log
 
 }
 
-
+ 1
 //Display the results in Kelvin as well
 result[1] = "This can also be represented as " + (tempConv[1]) + "° Kelvin. ";
 
